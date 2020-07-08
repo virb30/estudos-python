@@ -2,4 +2,4 @@
 
 Repositório para estudos de Python com Django
 
-Teste Ok!
+Teste Ok! Maria
