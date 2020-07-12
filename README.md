@@ -13,8 +13,9 @@ Desenvolver um sistema que gera gráficos a partir do DB com Django
 - [x] Instalar Django
 - [x] Aprender a criar projeto Django
 - [x] Aprender a criar Models no Python/Django
-- [ ] Aprender a criar Área administrativa para alimentar o model de dados
-- [ ] Aprender a fazer Frontend com Django (customizar telas)
+- [x] Aprender a criar Área administrativa para alimentar o model de dados
+- [x] Aprender a fazer Frontend com Django (customizar telas)
+- [x] Aprender a fazer interpolação no python
 - [ ] Aprender a criar gráficos com Python
 - [ ] Aprender a integrar gráficos do Python ao Django
 - [ ] Criar API com Django Rest-framework
