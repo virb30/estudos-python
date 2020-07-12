@@ -1,0 +1,10 @@
+<h1>Bombas</h1>
+<h2>Interpolacao (cubic): {{cubic}}</h2>
+<h2>Interpolacao (quadratic): {{ quadratic}}</h2>
+
+<ul>
+  {% for bomba in bombas %}
+    <li>{{bomba.modelo}} - {{bomba.n_estagio}}</li>
+  {% endfor %}
+</ul>
+
