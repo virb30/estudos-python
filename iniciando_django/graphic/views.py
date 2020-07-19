@@ -12,11 +12,18 @@ def index(request):
 
     x = [0, 20, 24, 26, 28, 30, 34]
     y = [40.8, 33, 30.3, 28.2, 25.8, 23.2, 18.5]
+    data = []
+
+    for i in range(len(x)):
+        data.append({
+            'x': x[i],
+            'y': y[i]
+        })
 
     cubic = interp1d(x, y, kind='cubic')(29)
     quadratic = interp1d(x, y, kind='quadratic')(23)
 
-    result = round(float(quadratic), 2)
+    result = {'x': 23, 'y': round(float(quadratic), 2)}
 
     return render(
         request,
@@ -24,6 +31,8 @@ def index(request):
         {
             'bombas': bombas,
             'cubic': cubic,
-            'quadratic': result
+            'result': result,
+            'data': data,
+            'labels': x,
         }
     )

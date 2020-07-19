@@ -1,6 +1,4 @@
 <h1>Bombas</h1>
-<h2>Interpolacao (cubic): {{cubic}}</h2>
-<h2>Interpolacao (quadratic): {{ quadratic}}</h2>
 
 <ul>
   {% for bomba in bombas %}
@@ -8,3 +6,35 @@
   {% endfor %}
 </ul>
 
+<div style="width: 600px; height: 600px;"> 
+  <h1>Gráfico</h1>
+  <canvas id="grafico"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+  var ctx = document.getElementById('grafico').getContext('2d');
+  var graph = new Chart(ctx, {
+    type: 'scatter',
+    data:{
+      labels: {{labels | safe}},
+      datasets: [
+        {
+          data: {{data | safe}},
+          fill: false ,
+          showLine: true,
+          
+        }, 
+        {
+          pointBackgroundColor: 'rgba(255,0,0,1)',
+          data: [{{result | safe}}],       
+        }
+      ]
+    },
+  });
+
+  window.onload = function(){
+    window.grafico = graph;
+  };
+</script>
