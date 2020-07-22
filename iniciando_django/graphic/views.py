@@ -20,7 +20,6 @@ def index(request):
             'y': y[i]
         })
 
-    cubic = interp1d(x, y, kind='cubic')(29)
     quadratic = interp1d(x, y, kind='quadratic')(23)
 
     result = {'x': 23, 'y': round(float(quadratic), 2)}
@@ -30,7 +29,6 @@ def index(request):
         'index.html',
         {
             'bombas': bombas,
-            'cubic': cubic,
             'result': result,
             'data': data,
             'labels': x,

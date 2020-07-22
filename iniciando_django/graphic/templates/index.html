@@ -22,9 +22,10 @@
       datasets: [
         {
           data: {{data | safe}},
-          fill: false ,
+          fill: false,
           showLine: true,
-          
+          showLegend: false,
+          cubicInterpolationMode: 'monotone',
         }, 
         {
           pointBackgroundColor: 'rgba(255,0,0,1)',
@@ -32,6 +33,19 @@
         }
       ]
     },
+    options:{
+      aspectRatio: 1,
+      scales:{
+        yAxes: [{
+          ticks:{
+            min: 0,
+          }
+        }]
+      },
+      legend:{
+        display: false
+      }
+    }
   });
 
   window.onload = function(){
